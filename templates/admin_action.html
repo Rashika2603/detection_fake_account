@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Action</title>
+</head>
+<body>
+    <h1>Admin Action</h1>
+    <p>Reported by: {{ report.reporter }}</p>
+    <p>Reported User: {{ report.reported_username }}</p>
+    <p>Reason: {{ report.reason }}</p>
+    <form method="POST" action="/admin/action/{{ report.id }}">
+        <label for="action">Action:</label>
+        <select id="action" name="action">
+            <option value="approve">Approve</option>
+            <option value="reject">Reject</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/admin_reports">Back to Admin Reports</a>
+</body>
+</html>

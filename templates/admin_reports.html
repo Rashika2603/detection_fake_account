@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Reports</title>
+</head>
+<body>
+    <h1>Admin Reports</h1>
+    <table>
+        <tr>
+            <th>Reporter</th>
+            <th>Reported User</th>
+            <th>Reason</th>
+            <th>Action</th>
+        </tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.reporter }}</td>
+            <td>{{ report.reported_username }}</td>
+            <td>{{ report.reason }}</td>
+            <td>
+                <a href="/admin/action/{{ report.id }}?action=approve">Approve</a> |
+                <a href="/admin/action/{{ report.id }}?action=reject">Reject</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/admin_dashboard">Back to Admin Dashboard</a>
+</body>
+</html>

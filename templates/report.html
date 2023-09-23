@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report User</title>
+</head>
+<body>
+    <h1>Report User</h1>
+    <form method="POST" action="/report">
+        <label for="reported_username">Username to Report:</label>
+        <input type="text" id="reported_username" name="reported_username" required>
+        <br>
+        <label for="reason">Reason for Report:</label>
+        <textarea id="reason" name="reason" required></textarea>
+        <br>
+        <input type="submit" value="Report">
+    </form>
+    <a href="/user_dashboard">Back to Dashboard</a>
+</body>
+</html>
